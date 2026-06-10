@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Electron | Lightweight Desktop Client</title>
+    <link rel="icon" type="image/x-icon" href="Whatsapp.ico">
+    <style>
+        :root {
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #075E54;
+            --whatsapp-teal: #128C7E;
+            --bg-dark: #111b21;
+            --panel-bg: #202c33;
+            --text-light: #e9edef;
+            --text-muted: #8696a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 80px 0 60px 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(18,140,126,0.1) 0%, rgba(17,27,33,1) 100%);
+        }
+
+        .logo {
+            width: 96px;
+            height: 96px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--whatsapp-green);
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background-color: #20ba5a;
+        }
+
+        .btn-secondary {
+            background-color: var(--panel-bg);
+            color: var(--text-light);
+            border: 1px solid #3b4a54;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2a3942;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #233138;
+        }
+
+        .card h3 {
+            color: var(--whatsapp-green);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        /* Quick Start Section */
+        .setup {
+            padding: 60px 0;
+            background-color: rgba(32, 44, 51, 0.5);
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+
+        .setup-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        code {
+            background-color: #0b141a;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff7b72;
+        }
+
+        .code-block {
+            background-color: #0b141a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #233138;
+        }
+
+        .code-block code {
+            color: #79c0ff;
+            background: none;
+            padding: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            border-top: 1px solid #233138;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--whatsapp-green);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="Whatsapp.ico" alt="WhatsApp Web Electron Logo" class="logo">
+            <h1>WhatsApp Web Electron</h1>
+            <p class="tagline">A seamless, lightweight Electron wrapper for WhatsApp Web. Enjoy a dedicated desktop chat experience without the browser clutter.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://github.com" class="btn btn-primary" target="_blank">Download Latest Release</a>
+                <a href="https://github.com/SkypeUser350/Whatsapp-Web-Electron" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="features">
+            <h2 style="text-align: center; font-size: 2rem;">Why Choose This Client?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🚀 Lightweight</h3>
+                    <p>Stripped of unnecessary browser bloat, focus solely on your messages with minimal resource consumption.</p>
+                </div>
+                <div class="card">
+                    <h3>🔔 Native Feel</h3>
+                    <p>Runs in its own independent window, making it easy to manage via your OS taskbar or dock.</p>
+                </div>
+                <div class="card">
+                    <h3>🔒 Secure</h3>
+                    <p>Loads official WhatsApp Web code directly. No middleman, keeping your personal data safe and encrypted.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="setup">
+            <div class="setup-content">
+                <h2>Quick Build Setup</h2>
+                <p style="margin-top: 10px; color: var(--text-muted);">Want to run it from source? Clone and spin it up in seconds:</p>
+                
+                <div class="code-block">
+<pre><code># Clone the repository
+git clone https://github.com
+
+# Navigate into the directory
+cd Whatsapp-Web-Electron
+
+# Install dependencies
+npm install
+
+# Start the application
+npm start</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This project is open-source and licensed under the repository terms.</p>
+            <p>Maintained by <a href="https://github.com/SkypeUser350" target="_blank">SkypeUser350</a>. Not affiliated with WhatsApp or Meta.</p>
+        </div>
+    </footer>
+</body>
+</html>
