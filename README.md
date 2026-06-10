@@ -9,7 +9,7 @@ get nwjs from nwjs.io and pick stable and normal option
 
 # Step 2
 
-download it and also download the package.json from this repo
+download it and also download the package.json from this repo by clicking on Code and then download ZIP
 
 # Step 3 
 
